@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Rick & Morty
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-list-header>
+      Characters
+    </ion-list-header>
+
+    <ion-item *ngFor="let character of characters" [routerLink]="['/profile', character.id]">
+      <ion-avatar slot="start">
+        <img [src]="character.image">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{character.name}}</h2>
+        <h3>{{character.species}}</h3>
+        <p>{{character.status}}</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
